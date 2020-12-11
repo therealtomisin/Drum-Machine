@@ -10,6 +10,7 @@
     background-color: purple;
     border: 10px solid black;
     width: 100vh;
+    padding: 10px;
 }
 .display {
     display: grid;
@@ -19,4 +20,8 @@
 }
 .drum-pad {
     border-radius: 5px;
+}
+.beatname{
+    background-color: yellow;
+    width: 100px;
 }
