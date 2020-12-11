@@ -11,12 +11,33 @@
     border: 10px solid black;
     width: 100vh;
     padding: 10px;
+    display: flex;
+    justify-content: space-between;
 }
 .display {
     display: grid;
     grid-template-rows: 90px 90px 90px;
     grid-template-columns: 100px 100px 100px;
     grid-gap: 10px;
+}
+#callbackdiv {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#callback {
+    background-color: black;
+    width: 200px;
+    height: 60px;
+    border:10px solid black;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 35px;
 }
 .drum-pad {
     border-radius: 5px;
