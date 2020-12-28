@@ -1,26 +1,33 @@
-import React, {useRef} from 'react'
+import React, {useRef, useEffect} from 'react'
 
-function DrumBody(props) {
+function DrumBody({name,beatname,sound,sounds, callback}) {
 
     const soundRef = useRef(null)
 
     const play = (name) => {
-        console.log(soundRef.current)
+    
         soundRef.current.play()
-        props.callback(name)
+        callback(name)
+    } 
+    const key =(e)=>{
+        sounds.map(key=>{
+            if(e.keyCode === key.keycode){
+              play(key.name)
+            }
+        })
     }
 
+    useEffect(()=>{
+        window.addEventListener('keydown',key)
+      }, [])
+
+    
+
     return (
-        <div className = 'display' id = 'display'>
-            {props.sounds.map((sound, index)=>{
-                return (
-                        <button key = {index} className = 'drum-pad' onClick = {()=>play(sound.name)}>
-                            <audio ref = {soundRef} src = {sound.aud}/>
-                            {sound.id}
-                        </button>
-                )
-            })}
-        </div>
+        <button key = {name} className = 'drum-pad' onClick = {()=>play(beatname)}>
+            <audio ref = {soundRef} src = {sound}/>
+            {name}
+        </button>
     )
 }
 
